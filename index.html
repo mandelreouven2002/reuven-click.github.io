@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reuven Zierl - Let's find our click</title>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary-color: #4a90e2;
+      --bg-color: #f0f8ff;
+      --text-color: #0a0a0a;
+      --timeline-bg: #e6f0ff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 20px 20px;
+    }
+
+    h1 {
+      font-size: 5em;
+      text-align: center;
+      color: var(--primary-color);
+      height: 1.2em;
+    }
+    
+    h2, h3, h4 {
+	color: var(--primary-color);
+    }
+
+    .photo {
+      margin-top: 20px;
+      width: 400px;
+      height: 500px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      overflow: hidden;
+      border: 6px solid var(--primary-color);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .social-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--primary-color);
+      padding: 10px;
+      margin: 40px auto;
+      border-radius: 100px;
+      flex-wrap: nowrap;
+      gap: 20px;
+    }
+
+    .social-bar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-bar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: white;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-size: 1.4em;
+      transition: background 0.3s;
+    }
+
+    .social-bar a:hover {
+      background-color: #e6f0ff;
+    }
+    
+    .social-bar a i {
+    font-size: 1.2em;
+  }
+
+    .download-btn {
+      display: flex;
+        flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px 0 10px;
+        margin: 20px auto 0 auto;
+      width: 180px;
+      height: 60px;
+      border-radius: 100px;
+      font-size: 1.2em;
+
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: #e6f0ff;
+    }
+    
+	.download-btn a i {
+    font-size: 1.2em;
+  }
+
+
+    .timeline {
+      width: 100%;
+      max-width: 900px;
+      margin: 100px auto;
+      position: relative;
+      padding: 50px 0;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      border-left: 4px dashed var(--primary-color);
+    }
+
+    .timeline-entry {
+      position: relative;
+      width: 50%;
+      padding: 20px;
+      box-sizing: border-box;
+      opacity: 0;
+      transform: translateY(80px);
+      transition: all 01.0s ease;
+    }
+
+
+    .timeline-entry.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-entry.left {
+      left: 0%;
+    }
+
+    .timeline-entry.right {
+      left: 49.6%;
+    }
+
+    .timeline-entry-content {
+      background: white;
+      padding: 20px;
+      border-radius: 30px;
+      position: relative;
+      width: 90%;
+      transition: transform 0.3s ease, background 0.3s;
+    }
+    
+
+    .timeline-entry-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .timeline-entry h3 {
+      margin: 0 0 10px;
+      font-size: 1.2em;
+      color: var(--primary-color);
+    }
+
+    .timeline-entry p {
+      margin: 0;
+    }
+
+    .timeline-entry::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border: 4px solid var(--primary-color);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-entry.left::before {
+      right: -12px;
+    }
+
+    .timeline-entry.right::before {
+      left: -12px;
+    }
+    
+    .about-container {
+      max-width: 900px;
+      width: 90%;
+      margin: 0 auto 0 auto;
+      padding: 20px;
+      background: white;
+      border-radius: 50px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .about-container h2 {
+     color: var(--primary-color);
+    }
+
+    .about-container p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+    .skills-container {
+      max-width: 900px;
+      width: 90%;
+      margin: 20px auto 0 auto;
+      padding: 20px;
+      background: white;
+      border-radius: 50px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="typing"></h1>
+    <div class="photo">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczNS9G4HDcLZyXN0zksexKok_nrCvO3w-ayGFDS96mRA9VV5lGLt0JE6-6cHls0zADn1Pha7lBnhjO0l-ATq-zDwZj4GiSgBnMblMmqdH-wgntrAXFK2=w2400"/>
+    </div>
+    <div class="social-container">
+      <div class="social-bar">
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+<a href="#" title="FaceBook"><i class="fab fa-facebook"></i></a>
+<a href="#" title="phone"><i class="fas fa-phone-flip"></i></a>
+      </div>
+    </div>
+  </header>
+  
+    <section class="about-container">
+    <h2>About Me</h2>
+    <p>
+Dynamic IT professional with 3+ years in ICT project management and over a year in IT process automation and development. Proficient in web development, data architecture, and IT processes, with experience in OutSystems and Google Workspace. Currently pursuing a BSc in Information Systems Engineering, with skills in Python, C, and Java. Aiming to leverage technical and leadership abilities to foster innovation and growth in a leading organization.</p>
+
+  </section>
+
+  <p>  </p>
+      <section class="skills-container">
+    <h2>Skills & Keys</h2>
+        <p>C, Python, Java, SQL, Web Development, Data Architecture, IT Processes, Microsoft Office suite, Google Workspace Administration</p>
+
+  </section>
+
+    <p>  </p>
+
+    <b><a href="#" class="download-btn" download> &nbsp; Download Resume</a></b>
+
+  <section class="timeline" id="timeline">
+    <div class="timeline-entry left">
+      
+<div class="timeline-entry-content">
+        <h3>B.Sc Student in Information System Engineering</h3>
+        <b><p>Technion Institute - Haifa, 2023-Present</p></b>
+	<ul>
+  <li>2nd year student with a goal to focus on integrating innovative software technology and quantitative analysis to architect and manage advanced systems that drive organizational efficiency and growth.</li>
+  <li>Completed the base courses (CS, algorithms, data structures, software engineering & OOP) with an 86 average.</li>
+</ul>  
+      </div>
+    </div>
+
+
+    <div class="timeline-entry right">
+      <div class="timeline-entry-content">
+          <h3>IT Operations and Automation Manager</h3>
+          <b><p>Volta Solar - Petah Tikva, 2023-2024</p></b>
+          <ul>
+            <li>Led cross-functional collaboration, optimizing IT & internal processes, increasing efficiency by 50%.</li>
+            <li>Designed and implemented strategic OKRs for the IT and automation section, aligning them with organizational goals.</li>
+            <li>Maintained and supported IT and operational systems for availability, reliability, and security guarantee.</li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="timeline-entry left">
+      <div class="timeline-entry-content">
+          <h3>Developer</h3>
+          <b><p>Volta Solar - Petah Tikva, 2023-2024</p></b>
+          <ul>
+            <li>Developed front-end frameworks & back-end flows with existing data APIs using OutSystems platform, implementing Agile methodologies.</li>
+            <li>Participated in meetings with Development, Product, Architecture & Management teams.</li>
+            <li>Conducted QA for web & app builds, validated tests, reviewed error logs, and troubleshooted problems.</li>
+          </ul>
+      </div>
+    </div>
+
+
+    </div>
+    <div class="timeline-entry right">
+      <div class="timeline-entry-content">
+        <h3>ICT and Computer Supervisor</h3>
+        <p>ORT Maalot & Heznek La'atid Association, 2020-2022</p>
+          <ul>
+              <li>Led diverse ICT projects, increasing on-site technology adoption by 40% during the COVID-19 period.</li>
+              <li>Provided IT administration, technical support, mentoring, and training to teaching staff and students.</li>
+          </ul>
+      </div>
+    </div>
+  </section>
+
+      <div class="social-container">
+      <div class="social-bar">
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+<a href="#" title="FaceBook"><i class="fab fa-facebook"></i></a>
+<a href="#" title="phone"><i class="fas fa-phone-flip"></i></a>
+      </div>
+    </div>
+
+
+  <script>
+    const phrases = ["Let's find our click;", "Let's find our click;"];
+    let current = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingElement = document.getElementById("typing");
+
+    function typeEffect() {
+      const fullText = phrases[current];
+      if (isDeleting) {
+        charIndex--;
+      } else {
+        charIndex++;
+      }
+      typingElement.textContent = fullText.slice(0, charIndex);
+
+      if (!isDeleting && charIndex === fullText.length) {
+        setTimeout(() => (isDeleting = true), 1000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        current = (current + 1) % phrases.length;
+      }
+
+      setTimeout(typeEffect, isDeleting ? 60 : 100);
+    }
+
+    typeEffect();
+
+    const entries = document.querySelectorAll(".timeline-entry");
+    window.addEventListener("scroll", () => {
+      entries.forEach(entry => {
+        const rect = entry.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          entry.classList.add("show");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
