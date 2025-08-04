@@ -1,422 +1,293 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reuven Zierl - Let's find our click</title>
-<link rel="shortcut icon" type="image/png" href="/favicon.png">
-
-<meta name="description" content="Information Systems Engineering Student, Technion Haifa | Former IT Operations Manager | Seeking Student Role in TechOps / DevOps / DataOps / Cloud / Cloud / IT Product Management">
-<meta name="keywords" content="Reuven Zierl, Reuven Mandelovich, Reuven Zierl Mandelovich, ראובן צירל, קורות חיים, Information Systems, טכניון, פרויקטים, טכנולוגיה, יזמות, לינקדאין, מפתח, מרצה, סטודנט, OutSystems, Make, Zoho, Airtable, GCP, Microsoft 365, Google Workspace, ERD, TechOps, DevOps, DataOps, Cloud, Cloud, IT Product, IT Ops">
-<meta name="author" content="Reuven Zierl">
-
-<link rel="canonical" href="https://lp.reuven.click" />
-<meta http-equiv="Content-Language" content="en">
-
-
-  <!-- Structured Data: JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Reuven Zierl",
-    "url": "https://lp.reuven.click",
-    "image": "https://lp.reuven.click/preview.jpg",
-    "jobTitle": "Information Systems Engineering Student",
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "Technion – Israel Institute of Technology"
-    },
-    "description": "Information Systems Engineering Student, Technion | Former IT Ops Manager | TechOps, DevOps & Cloud Enthusiast.",
-    "sameAs": [
-      "https://www.linkedin.com/in/reuvenzierl",
-      "https://github.com/reuvenzierl"
-    ],
-    "nationality": "Israeli"
-  }
-  </script>
-
-	<meta name="google-site-verification" content="dAkTB-XOaiL91AsoAMdrVHDZ8OaLPDHRq2GdVggqvSc" />
-
-	
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
-    :root {
-      --primary-color: #4a90e2;
-      --bg-color: #f0f8ff;
-      --text-color: #0a0a0a;
-      --timeline-bg: #e6f0ff;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      overflow-x: hidden;
-    }
-
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px 20px 20px;
-    }
-
-    h1 {
-      font-size: 5em;
-      text-align: center;
-      color: var(--primary-color);
-      height: 1.2em;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reuven Zierl - Let's find our click</title>
     
-    h2, h3, h4 {
-	color: var(--primary-color);
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Information Systems Engineering Student at the Technion, Haifa. Former IT Operations Manager seeking a student role in TechOps, DevOps, DataOps, or IT Product Management.">
+    <meta name="keywords" content="Reuven Zierl, Reuven Mandelovich, Reuven Zierl Mandelovich, ראובן צירל, קורות חיים, Information Systems, Technion, Developer, TechOps, DevOps, DataOps, Cloud, IT Product, IT Ops, OutSystems, Make, GCP">
+    <meta name="author" content="Reuven Zierl">
+    <link rel="canonical" href="https://lp.reuven.click" />
+    <meta http-equiv="Content-Language" content="en">
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Structured Data: JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Reuven Zierl",
+      "url": "https://lp.reuven.click",
+      "image": "https://lp.reuven.click/preview.jpg",
+      "jobTitle": "Information Systems Engineering Student",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Technion – Israel Institute of Technology"
+      },
+      "description": "Information Systems Engineering Student, Technion | Former IT Ops Manager | TechOps, DevOps & Cloud Enthusiast.",
+      "sameAs": [
+        "https://www.linkedin.com/in/reuvenzierl",
+        "https://github.com/reuvenzierl"
+      ],
+      "nationality": "Israeli"
     }
+    </script>
 
-    .photo {
-      margin-top: 20px;
-      width: 400px;
-      height: 500px;
-      border-radius: 60% 60% 60% 60% / 50% 50% 50% 50%;
-      overflow: hidden;
-      border: 6px solid var(--primary-color);
-    }
-
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .social-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: var(--primary-color);
-      padding: 10px;
-      margin: 40px auto;
-      border-radius: 100px;
-      flex-wrap: nowrap;
-      gap: 20px;
-    }
-
-    .social-bar {
-      display: flex;
-      gap: 20px;
-    }
-
-    .social-bar a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: white;
-      color: var(--primary-color);
-      text-decoration: none;
-      font-size: 1.4em;
-      transition: background 0.3s;
-    }
-
-    .social-bar a:hover {
-      background-color: #e6f0ff;
-    }
-    
-    .social-bar a i {
-    font-size: 1.2em;
-  }
-
-    .download-btn {
-      display: flex;
-        flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0 10px 0 10px;
-        margin: 20px auto 0 auto;
-      width: 180px;
-      height: 60px;
-      border-radius: 100px;
-      font-size: 1.2em;
-
-      background-color: var(--primary-color);
-      color: white;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-
-    .download-btn:hover {
-      background-color: #e6f0ff;
-    }
-    
-	.download-btn a i {
-    font-size: 1.2em;
-  }
-
-
-    .timeline {
-      width: 100%;
-      max-width: 900px;
-      margin: 100px auto;
-      position: relative;
-      padding: 50px 0;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 4px;
-      border-left: 4px dashed var(--primary-color);
-    }
-
-    .timeline-entry {
-      position: relative;
-      width: 50%;
-      padding: 20px;
-      box-sizing: border-box;
-      opacity: 0;
-      transform: translateY(80px);
-      transition: all 01.0s ease;
-    }
-
-
-    .timeline-entry.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .timeline-entry.left {
-      left: 0%;
-    }
-
-    .timeline-entry.right {
-      left: 49.6%;
-    }
-
-    .timeline-entry-content {
-      background: white;
-      padding: 20px;
-      border-radius: 30px;
-      position: relative;
-      width: 90%;
-      transition: transform 0.3s ease, background 0.3s;
-    }
-    
-
-    .timeline-entry-content:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    }
-
-    .timeline-entry h3 {
-      margin: 0 0 10px;
-      font-size: 1.2em;
-      color: var(--primary-color);
-    }
-
-    .timeline-entry p {
-      margin: 0;
-    }
-
-    .timeline-entry::before {
-      content: "";
-      position: absolute;
-      top: 20px;
-      width: 20px;
-      height: 20px;
-      background: white;
-      border: 4px solid var(--primary-color);
-      border-radius: 50%;
-      z-index: 1;
-    }
-
-    .timeline-entry.left::before {
-      right: -12px;
-    }
-
-    .timeline-entry.right::before {
-      left: -12px;
-    }
-    
-    .about-container {
-      max-width: 900px;
-      width: 90%;
-      margin: 0 auto 0 auto;
-      padding: 20px;
-      background: white;
-      border-radius: 50px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .about-container h2 {
-     color: var(--primary-color);
-    }
-
-    .about-container p {
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-    .skills-container {
-      max-width: 900px;
-      width: 90%;
-      margin: 20px auto 0 auto;
-      padding: 20px;
-      background: white;
-      border-radius: 50px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-  </style>
-</head>
-<body>
-  <header>
-    <h1 id="typing"></h1>
-    <div class="photo">
-      <img src="/profile-image.jpg"/>
-    </div>
-    <div class="social-container">
-      <div class="social-bar">
-        <a href="www.linkedin.com/in/reuven-click" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-<a href="https://www.facebook.com/profile.php?id=100018524532373" title="FaceBook"><i class="fab fa-facebook"></i></a>
-<a href="tel:972559799613" title="phone"><i class="fas fa-phone-flip"></i></a>
-<a href="mailto:mandelreouven2002@gmail.com" title="email"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-  </header>
-  
-    <section class="about-container">
-    <h2>About Me</h2>
-<ul>
-  <li>2nd year B.Sc. student in Information Systems Engineering at the Technion. Experienced in system management, application development, IT operations, automation, and technological process improvement.</li>
-  <li>Proficient in C, Python, Java, & SQL, with hands-on experience in tools such as GCP, OutSystems, Make, and GitHub.</li>
-	<li>Strong analytical, communication, and teamwork skills. Skilled in project leadership, problem-solving, budget management, and day-to-day technical operations.</li>
-	<li>Experienced in delivering individual and group training for tech teams and end users.</li>
-</ul>  
-  </section>
-
-  <p>  </p>
-      <section class="skills-container">
-    <h2>Languages, Skills & Keys</h2>
-		<p><b>Languages: </b>Hebrew - mother tongue   |   English - fluent.</p>
-		<p><b>Programming Languages: </b>C, Python, Java, SQL, HTML.</p>
-		<p><b>Other tools: </b>OutSystems, Make, Zoho, Airtable, GCP, Microsoft 365, Google Workspace, ERD usage.</p>
-
-
-  </section>
-
-    <p>  </p>
-
-    <b><a href="/Resume - Reuven Zierl.pdf" class="download-btn" download> &nbsp; Download Resume</a></b>
-
-  <section class="timeline" id="timeline">
-    <div class="timeline-entry left">
-      
-<div class="timeline-entry-content">
-        <h3>B.Sc Student in Information System Engineering</h3>
-        <b><p>Technion Institute - Haifa, 2023-Present</p></b>
-	<ul>
-  <li>2nd year student in the Faculty of Data and Decisions Science at the Technion.</li>
-  <li>Completed core CS courses (CS, algorithms, data structures, Software Engineering & OOP).</li>
-  <li>Employed by the Technion as a private tutor for three Computer Science subjects.</li>
-  <li>Proficient in C, Java, Python, and SQL. experienced with GitHub.</li>
-</ul>  
-      </div>
-    </div>
-	  
-    <div class="timeline-entry right">
-      <div class="timeline-entry-content">
-          <h3>IT Operations and Automation Manager</h3>
-          <b><p>Volta Solar - Petah Tikva, 2023-2024</p></b>
-          <ul>
-            <li>Led IT operations, including internal automation development, documentation, and interdepartmental process improvement. Utilized ERD and process diagrams.</li>
-            <li>Ensured system availability and stability: managed software versions, backups, and development environments, while maintaining Agile Methodology.</li>
-            <li>Planned IT strategy, defined and tracked OKRs to support organizational goals, managed the IT budget, optimized technological expenditures, and improved operational efficiency.</li>
-            <li>Oversaw day-to-day IT operations, including information systems, security, and technical support.</li>
-          </ul>
-      </div>
-    </div>
-
-    <div class="timeline-entry left">
-      <div class="timeline-entry-content">
-          <h3>Developer</h3>
-          <b><p>Volta Solar - Petah Tikva, 2023-2024</p></b>
-          <ul>
-            <li>Developed internal systems & operational tools, using SQL and low-code platforms (OutSystems, Make), with API integration, following Agile methodologies.</li>
-            <li>Participated in requirements meetings, planning and delivering solutions across departments.</li>
-            <li>Conducted QA, debugged errors, troubleshooted issues, and maintained the company's apps.</li>
-          </ul>
-      </div>
-    </div>
-
-    </div>
-    <div class="timeline-entry right">
-      <div class="timeline-entry-content">
-        <h3>ICT and Computer Supervisor</h3>
-        <p>National Service, 2020-2022</p>
-          <ul>
-              <li>Led diverse ICT projects of the education corp, promoting the use of digital tools among users.</li>
-              <li>Provided IT administration, technical support, mentoring, & training for teaching staff and students.</li>
-          </ul>
-      </div>
-    </div>
-  </section>
-    </div>
-
-
-  <script>
-    const phrases = ["Reuven Zierl", "Let's find our click;"];
-    let current = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    const typingElement = document.getElementById("typing");
-
-    function typeEffect() {
-      const fullText = phrases[current];
-      if (isDeleting) {
-        charIndex--;
-      } else {
-        charIndex++;
-      }
-      typingElement.textContent = fullText.slice(0, charIndex);
-
-      if (!isDeleting && charIndex === fullText.length) {
-        setTimeout(() => (isDeleting = true), 1000);
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        current = (current + 1) % phrases.length;
-      }
-
-      setTimeout(typeEffect, isDeleting ? 60 : 100);
-    }
-
-    typeEffect();
-
-    const entries = document.querySelectorAll(".timeline-entry");
-    window.addEventListener("scroll", () => {
-      entries.forEach(entry => {
-        const rect = entry.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          entry.classList.add("show");
+    <style>
+        /* Custom styles for better aesthetics */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f8ff; /* Original background color */
+            color: #1f2937; /* Tailwind's gray-800 */
         }
-      });
-    });
-  </script>
+        .main-heading {
+            color: #4a90e2;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { color: transparent }
+            50% { color: #4a90e2; }
+        }
+        /* Style for the profile photo shape - reverted to original */
+        .photo-shape {
+            border-radius: 60% 60% 60% 60% / 50% 50% 50% 50%;
+            border: 6px solid #4a90e2; /* Original primary color */
+        }
+        /* Animation for timeline entries */
+        .timeline-entry {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .timeline-entry.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Style for the dashed timeline line, visible on all screens */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            border-left: 4px dashed #4a90e2;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#">
+                    <img src="https://placehold.co/128x128/4a90e2/ffffff?text=RZ" alt="Reuven Zierl Logo" class="h-8 w-8 rounded-full">
+                </a>
+                <!-- Navigation Links -->
+                <div class="flex items-center space-x-10">
+                    <a href="#" class="font-medium text-gray-700 hover:text-[#4a90e2] transition-colors duration-300">Home</a>
+                    <a href="/qls" class="font-medium text-gray-700 hover:text-[#4a90e2] transition-colors duration-300">QLS Method</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="text-center pt-12 pb-12 md:pt-20 md:pb-12 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="w-72 h-96 md:w-80 md:h-[28rem] mx-auto mb-8 photo-shape overflow-hidden shadow-xl">
+                <img src="/profile-image.jpg" alt="Reuven Zierl" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='https://placehold.co/320x448/e2e8f0/4a5568?text=RZ';">
+            </div>
+            <h1 id="typing" class="text-5xl md:text-7xl font-extrabold h-24 md:h-28 flex items-center justify-center typing-cursor main-heading"></h1>
+            <p class="mt-4 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
+                Information Systems Engineering Student at the Technion & former IT Ops Manager.
+                Passionate about TechOps, DevOps, and building efficient, scalable solutions.
+            </p>
+            <div class="mt-8 flex justify-center items-center space-x-4">
+                <a href="https://www.linkedin.com/in/reuven-click" target="_blank" title="LinkedIn" class="w-12 h-12 flex items-center justify-center bg-blue-600 text-white rounded-full text-xl transition-transform hover:scale-110 shadow-lg"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100018524532373" target="_blank" title="Facebook" class="w-12 h-12 flex items-center justify-center bg-blue-800 text-white rounded-full text-xl transition-transform hover:scale-110 shadow-lg"><i class="fab fa-facebook-f"></i></a>
+                <a href="tel:+972559799613" title="Phone" class="w-12 h-12 flex items-center justify-center bg-green-500 text-white rounded-full text-xl transition-transform hover:scale-110 shadow-lg"><i class="fas fa-phone"></i></a>
+                <a href="mailto:mandelreouven2002@gmail.com" title="Email" class="w-12 h-12 flex items-center justify-center bg-gray-700 text-white rounded-full text-xl transition-transform hover:scale-110 shadow-lg"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="px-4 pb-20">
+        <!-- About Me & Skills Section -->
+        <section class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 mb-16">
+            <div class="md:col-span-3 bg-white p-8 rounded-2xl shadow-md">
+                <h2 class="text-3xl font-bold text-[#4a90e2] mb-4 border-b-2 border-[#4a90e2] pb-2">About Me</h2>
+                <div class="space-y-4 text-slate-700 text-base leading-relaxed">
+                    <p>I am a second-year B.Sc. student in <strong>Information Systems Engineering</strong> at the Technion, bringing hands-on experience in system management, application development, IT operations, and process automation.</p>
+                    <p>With strong analytical and communication skills, I excel in team environments and have a proven ability in <strong>project leadership, problem-solving,</strong> and managing technical operations. I also have experience delivering targeted training for both technical teams and end-users.</p>
+                </div>
+            </div>
+            <div class="md:col-span-2 bg-white p-8 rounded-2xl shadow-md">
+                <h2 class="text-3xl font-bold text-[#4a90e2] mb-4 border-b-2 border-[#4a90e2] pb-2">Skills</h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li><strong>Languages:</strong> Hebrew (Native) | English (Fluent)</li>
+                    <li><strong>Core Languages:</strong> C, Python, Java, SQL, HTML</li>
+                    <li><strong>Tools & Platforms:</strong> OutSystems, Make, Zoho, Airtable, GCP, Microsoft 365, Google Workspace, ERD</li>
+                </ul>
+                 <a href="/Resume - Reuven Zierl.pdf" download class="mt-6 inline-block w-full text-center bg-[#4a90e2] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-[#357abd] transition-all duration-300">
+                    <i class="fas fa-download mr-2"></i> Download Resume
+                </a>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-[#4a90e2] mb-16">My Journey</h2>
+            <div class="relative timeline-container">
+                <!-- The vertical dashed line is now created with CSS and is visible on all screen sizes -->
+
+                <!-- Timeline Entry 1 -->
+                <div class="timeline-entry md:flex mb-12 items-start">
+                    <div class="md:w-1/2 md:pr-8 text-right"></div>
+                    <div class="relative md:w-1/2 md:pl-8">
+                        <div class="hidden md:block absolute top-1 -left-2.5 w-5 h-5 bg-white border-4 border-[#4a90e2] rounded-full"></div>
+                        <div class="bg-white p-6 rounded-xl shadow-md w-11/12 md:w-full">
+                            <h3 class="text-xl font-bold text-[#4a90e2]">B.Sc Student in Information System Engineering</h3>
+                            <p class="text-sm text-slate-500 font-medium mb-3">Technion Institute - Haifa, 2023-Present</p>
+                            <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                <li>Currently in my second year in the Faculty of Data and Decision Sciences.</li>
+                                <li>Completed core courses in CS fundamentals, algorithms, data structures, and OOP.</li>
+                                <li>Selected by the Technion as a private tutor for three foundational Computer Science courses.</li>
+                                <li>Proficient in C, Java, Python, and SQL, with experience using GitHub for version control.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Entry 2 -->
+                <div class="timeline-entry md:flex flex-row-reverse mb-12 items-start">
+                    <div class="md:w-1/2 md:pl-8"></div>
+                    <div class="relative md:w-1/2 md:pr-8 md:text-right">
+                         <div class="hidden md:block absolute top-1 -right-2.5 w-5 h-5 bg-white border-4 border-[#4a90e2] rounded-full"></div>
+                        <div class="bg-white p-6 rounded-xl shadow-md w-11/12 md:w-full ml-auto md:ml-0 md:text-left">
+                            <h3 class="text-xl font-bold text-[#4a90e2]">IT Operations and Automation Manager</h3>
+                            <p class="text-sm text-slate-500 font-medium mb-3">Volta Solar - Petah Tikva, 2023-2024</p>
+                            <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                <li>Led IT operations, driving internal automation and improving interdepartmental processes.</li>
+                                <li>Maintained high system availability by managing software versions, backups, and dev environments within an Agile framework.</li>
+                                <li>Planned IT strategy, managed budgets, and tracked OKRs to support organizational goals.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Entry 3 -->
+                <div class="timeline-entry md:flex mb-12 items-start">
+                    <div class="md:w-1/2 md:pr-8 text-right"></div>
+                    <div class="relative md:w-1/2 md:pl-8">
+                        <div class="hidden md:block absolute top-1 -left-2.5 w-5 h-5 bg-white border-4 border-[#4a90e2] rounded-full"></div>
+                        <div class="bg-white p-6 rounded-xl shadow-md w-11/12 md:w-full">
+                            <h3 class="text-xl font-bold text-[#4a90e2]">Developer</h3>
+                            <p class="text-sm text-slate-500 font-medium mb-3">Volta Solar - Petah Tikva, 2023-2024</p>
+                            <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                <li>Developed internal systems and operational tools using SQL and low-code platforms (OutSystems, Make).</li>
+                                <li>Integrated APIs and adhered to Agile methodologies to deliver solutions across departments.</li>
+                                <li>Conducted QA, debugged errors, and maintained company applications.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Entry 4 -->
+                <div class="timeline-entry md:flex flex-row-reverse mb-12 items-start">
+                    <div class="md:w-1/2 md:pl-8"></div>
+                    <div class="relative md:w-1/2 md:pr-8 md:text-right">
+                         <div class="hidden md:block absolute top-1 -right-2.5 w-5 h-5 bg-white border-4 border-[#4a90e2] rounded-full"></div>
+                        <div class="bg-white p-6 rounded-xl shadow-md w-11/12 md:w-full ml-auto md:ml-0 md:text-left">
+                            <h3 class="text-xl font-bold text-[#4a90e2]">ICT and Computer Supervisor</h3>
+                            <p class="text-sm text-slate-500 font-medium mb-3">National Service, 2020-2022</p>
+                            <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                <li>Led diverse ICT projects for the Education Corps, championing the adoption of digital tools.</li>
+                                <li>Provided IT administration, technical support, and training for teaching staff and students.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // --- Typing Effect Script ---
+        const phrases = ["Reuven Zierl", "Let's find our click;"];
+        let currentPhraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById("typing");
+
+        function typeEffect() {
+            const currentPhrase = phrases[currentPhraseIndex];
+            let typeSpeed = isDeleting ? 60 : 120;
+
+            // Determine the part of the string to display
+            typingElement.textContent = currentPhrase.substring(0, charIndex);
+
+            if (!isDeleting && charIndex < currentPhrase.length) {
+                // Typing forward
+                charIndex++;
+            } else if (isDeleting && charIndex > 0) {
+                // Deleting
+                charIndex--;
+            } else {
+                // Switch between typing and deleting
+                isDeleting = !isDeleting;
+                if (!isDeleting) {
+                    // Move to the next phrase
+                    currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                }
+                // Add a pause at the end of typing/deleting
+                typeSpeed = 1200;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+        
+        // Start the effect on load
+        document.addEventListener('DOMContentLoaded', typeEffect);
+
+        // --- Scroll Animation Script ---
+        const entries = document.querySelectorAll(".timeline-entry");
+        const observer = new IntersectionObserver((items) => {
+            items.forEach(item => {
+                if (item.isIntersecting) {
+                    item.target.classList.add('show');
+                    observer.unobserve(item.target); // Optional: stop observing once visible
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        entries.forEach(entry => {
+            observer.observe(entry);
+        });
+    </script>
 </body>
 </html>
