@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reuven Mandelovich - Personal Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg p-8 text-center">
+        <!-- Profile Picture -->
+        <div class="mb-6">
+            <img src="/profile-image.jpg"
+                 alt="Reuven Zierl Mandelovich" 
+                 class="w-32 h-32 rounded-full mx-auto border-4 border-gray-200 object-cover"
+                 onerror="this.onerror=null;this.src='https://placehold.co/128x128/374151/E5E7EB?text=RM';">
+        </div>
+
+        <!-- Name and Title -->
+        <h1 class="text-3xl font-bold text-gray-900">Reuven Zierl Mandelovich</h1>
+        <p class="text-gray-600 mt-2 px-4">Information Systems Engineering Student, Technion Haifa | Former IT Operations Manager</p>
+
+        <!-- Links Section -->
+        <div class="mt-8 space-y-4">
+            <!-- LinkedIn -->
+            <a href="http://www.linkedin.com/in/reuven-click" target="_blank" class="flex items-center justify-center w-full bg-[#4a90e2] hover:bg-[#407dca] text-white font-semibold py-3 px-4 rounded-lg transition-transform transform hover:scale-105">
+                <i class="fab fa-linkedin-in mr-3"></i>
+                <span>LinkedIn</span>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/rwbnzyrlmndlwbyz" target="_blank" class="flex items-center justify-center w-full bg-[#3b7ac4] hover:bg-[#356ab1] text-white font-semibold py-3 px-4 rounded-lg transition-transform transform hover:scale-105">
+                <i class="fab fa-facebook-f mr-3"></i>
+                <span>Facebook</span>
+            </a>
+
+            <!-- Resume -->
+            <a href="http://lp.reuven.click" target="_blank" class="flex items-center justify-center w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-4 rounded-lg transition-transform transform hover:scale-105">
+                <i class="fas fa-file-alt mr-3"></i>
+                <span>My Resume</span>
+            </a>
+            
+            <!-- QLS Paper -->
+            <a href="http://lp.reuven.click/qls" target="_blank" class="flex items-center justify-center w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-transform transform hover:scale-105">
+                <i class="fas fa-scroll mr-3"></i>
+                <span>Paper: The QLS Method</span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:mandelreouven2002@gmail.com" class="flex items-center justify-center w-full bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-4 rounded-lg transition-transform transform hover:scale-105">
+                <i class="fas fa-envelope mr-3"></i>
+                <span>E-Mail Me</span>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+972559799613" class="flex items-center justify-center w-full bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-4 rounded-lg transition-transform transform hover:scale-105">
+                <i class="fas fa-phone mr-3"></i>
+                <span>Call Me</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-8 text-xs text-gray-400">
+            <p>&copy; 2024 Reuven Mandel. All Rights Reserved.</p>
+        </div>
+    </div>
+
+</body>
+</html>
