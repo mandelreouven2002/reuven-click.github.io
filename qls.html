@@ -86,7 +86,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex">
             <!-- Sidebar Navigation -->
-            <aside id="sidebar" class="fixed top-16 -left-64 md:left-0 md:w-64 h-[calc(100vh-4rem)] bg-white/50 backdrop-blur-md border-r border-slate-200 overflow-y-auto transition-all duration-300 ease-in-out z-10 md:block">
+            <!-- Added 'hidden' class for mobile by default, 'md:block' overrides on desktop -->
+            <aside id="sidebar" class="fixed top-16 -left-64 hidden md:left-0 md:w-64 h-[calc(100vh-4rem)] bg-white/50 backdrop-blur-md border-r border-slate-200 overflow-y-auto transition-all duration-300 ease-in-out z-10 md:block">
                 <nav class="p-4">
                     <ul id="sidebar-nav-list" class="space-y-1">
                         <!-- Navigation links will be dynamically inserted here by JavaScript -->
@@ -383,16 +384,33 @@
 
             // --- MOBILE MENU TOGGLE ---
             mobileMenuButton.addEventListener('click', () => {
-                sidebar.classList.toggle('-left-64');
-                sidebar.classList.toggle('left-0');
+                const sidebar = document.getElementById('sidebar');
+                if (sidebar.classList.contains('hidden')) {
+                    // Open sidebar: remove hidden, then transition left
+                    sidebar.classList.remove('hidden');
+                    sidebar.classList.remove('-left-64');
+                    sidebar.classList.add('left-0');
+                } else {
+                    // Close sidebar: transition left, then add hidden after transition
+                    sidebar.classList.remove('left-0');
+                    sidebar.classList.add('-left-64');
+                    // Wait for the transition to complete before hiding completely
+                    setTimeout(() => {
+                        sidebar.classList.add('hidden');
+                    }, 300); // Match transition duration
+                }
             });
 
             // Close sidebar when any link is clicked on mobile
             document.querySelectorAll('.sidebar-link').forEach(link => {
                 link.addEventListener('click', () => {
                     if (window.innerWidth < 768) { // md breakpoint
-                        sidebar.classList.add('-left-64');
+                        const sidebar = document.getElementById('sidebar');
                         sidebar.classList.remove('left-0');
+                        sidebar.classList.add('-left-64');
+                        setTimeout(() => {
+                            sidebar.classList.add('hidden');
+                        }, 300); // Match transition duration
                     }
                 });
             });
