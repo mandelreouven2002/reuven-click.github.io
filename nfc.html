@@ -12,112 +12,180 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            -webkit-tap-highlight-color: transparent;
+            -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
         }
         .btn {
-            @apply w-full text-white font-bold py-4 px-4 rounded-lg shadow-md transition-transform transform active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2;
+            /* Common button styles */
+            @apply w-full font-bold py-4 px-4 rounded-lg shadow-md transition-all duration-200 ease-in-out transform active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2;
+            
         }
-        .btn-blue {
-            @apply bg-blue-500 hover:bg-blue-600 focus:ring-blue-500;
+        .btn-select {
+            /* Styles for URL selection buttons - enhanced for a more prominent button look */
+            /* Increased border thickness and darker border color for better visibility */
+            @apply bg-gray-50 border-4 border-gray-600 text-gray-700 hover:bg-gray-100 shadow-md; 
         }
-        .btn-green {
-            @apply bg-green-500 hover:bg-green-600 focus:ring-green-500;
+        .btn-select.selected {
+            /* Styles for selected URL button */
+            @apply ring-4 ring-offset-0;
         }
-        .btn-purple {
-            @apply bg-purple-500 hover:bg-purple-600 focus:ring-purple-500;
+        .btn:disabled {
+            /* Styles for disabled buttons */
+            @apply bg-gray-300 text-gray-500 cursor-not-allowed shadow-none transform-none border-gray-300;
         }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
 
     <div class="w-full max-w-md mx-auto p-6 bg-white rounded-xl shadow-lg">
         <div class="text-center">
             <h1 class="text-2xl font-bold text-gray-800">NFC URL Writer</h1>
-            <p class="text-gray-500 mt-2">Tap a button, then tap an NFC tag to write the URL.</p>
+            <p class="text-gray-500 mt-2">
+                1. Select a URL below. <br>
+                2. Tap the 'Write' button. <br>
+                3. Tap an NFC tag with your phone.
+            </p>
         </div>
 
         <!-- Status Message Box -->
         <div id="status-message" class="mt-6 p-4 text-center rounded-lg text-sm font-medium hidden"></div>
 
-        <!-- URL Buttons -->
-        <div class="mt-8 space-y-4">
-            <button id="btn-url1" class="btn btn-blue">
-                Write lp.reuven.click/urls
+        <!-- URL Selection Buttons -->
+        <div class="mt-8 space-y-4" id="url-selection-group">
+            <button data-url="https://lp.reuven.click/urls" class="block w-full bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg text-lg">
+                lp.reuven.click - urls
             </button>
-            <button id="btn-url2" class="btn btn-green">
-                Write rrpg.top
+            <button data-url="https://lp.reuven.click/" class="block w-full bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg text-lg">
+                lp.reuven.click - resume
             </button>
-            <button id="btn-url3" class="btn btn-purple">
-                Write follow.rrpg.top
+            <button data-url="https://rrpg.top" class="block w-full bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg text-lg">
+                rrpg.top
+            </button>
+            <button data-url="https://follow.rrpg.top" class="block w-full bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg text-lg">
+                rrpg.top - Whatsapp
+            </button>
+        </div>
+
+        <!-- Action Button -->
+        <div class="mt-8">
+            <button id="write-nfc-btn" class="btn bg-gray-400 text-white" disabled>
+                Select a URL to activate
             </button>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const btnUrl1 = document.getElementById('btn-url1');
-            const btnUrl2 = document.getElementById('btn-url2');
-            const btnUrl3 = document.getElementById('btn-url3');
+            const urlButtons = document.querySelectorAll('.btn-select');
+            const writeButton = document.getElementById('write-nfc-btn');
             const statusMessage = document.getElementById('status-message');
+            let selectedUrl = null;
 
             // Check for Web NFC browser support
             if (!('NDEFReader' in window)) {
                 showMessage('Web NFC is not supported on this browser. Please use Chrome on Android.', 'error');
-                // Disable buttons if not supported
-                btnUrl1.disabled = true;
-                btnUrl2.disabled = true;
-                btnUrl3.disabled = true;
-                btnUrl1.classList.add('opacity-50', 'cursor-not-allowed');
-                btnUrl2.classList.add('opacity-50', 'cursor-not-allowed');
-                btnUrl3.classList.add('opacity-50', 'cursor-not-allowed');
-                return;
+                urlButtons.forEach(btn => btn.disabled = true);
+                writeButton.disabled = true;
+                return; // Exit if NFC is not supported
             }
             
-            showMessage('Ready. Select a URL to write.', 'info');
+            // Initial message when the page loads
+            showMessage('Ready. Select a URL to write to an NFC tag.', 'info');
 
-            // Add click listeners to buttons
-            btnUrl1.addEventListener('click', () => writeNfcTag('https://lp.reuven.click/urls'));
-            btnUrl2.addEventListener('click', () => writeNfcTag('https://rrpg.top'));
-            btnUrl3.addEventListener('click', () => writeNfcTag('https://follow.rrpg.top'));
+            // Add click listeners to URL selection buttons
+            urlButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Clear previous selection by removing 'selected' class and ring colors
+                    urlButtons.forEach(btn => btn.classList.remove('selected', 'ring-blue-500', 'ring-green-500', 'ring-purple-500'));
+
+                    // Mark the newly clicked button as selected
+                    selectedUrl = button.dataset.url;
+                    button.classList.add('selected');
+                    
+                    // Apply the correct ring color based on the selected URL
+                    if (selectedUrl.includes('reuven')) {
+                        button.classList.add('ring-blue-500');
+                    } else if (selectedUrl.includes('rrpg.top')) {
+                        button.classList.add('ring-green-500');
+                    } else {
+                        button.classList.add('ring-purple-500');
+                    }
+
+                    // Enable and style the main write button once a URL is selected
+                    writeButton.disabled = false;
+                    writeButton.textContent = 'Write to NFC Tag';
+                    writeButton.className = 'btn bg-indigo-600 hover:bg-indigo-700 text-white focus:ring-indigo-500';
+                    showMessage('URL selected. Tap "Write to NFC Tag" when ready.', 'info');
+                });
+            });
+
+            // Add click listener to the main write button
+            writeButton.addEventListener('click', () => {
+                if (selectedUrl) {
+                    writeNfcTag(selectedUrl);
+                } else {
+                    showMessage('Please select a URL first.', 'error');
+                }
+            });
 
             /**
-             * Writes a URL to an NFC tag.
+             * Writes a URL to an NFC tag using the Web NFC API.
              * @param {string} url - The URL to write to the tag.
              */
             async function writeNfcTag(url) {
                 try {
-                    // Create a new NDEFReader instance
-                    const ndef = new NDEFReader();
-                    
-                    showMessage('Tap an NFC tag now...', 'writing');
-                    
-                    // The write operation is a promise that resolves when the tag is written
+                    const ndef = new NDEFReader(); // Create a new NDEFReader instance
+                    showMessage('Tap an NFC tag now to write the URL...', 'writing');
+                    writeButton.disabled = true; // Disable button while writing
+                    writeButton.textContent = 'Tapping NFC Tag...';
+
+                    // Attempt to write the URL record to the NFC tag
                     await ndef.write({
                         records: [{ recordType: "url", data: url }]
                     });
-
-                    showMessage(`Successfully wrote: ${url}`, 'success');
+                    showMessage(`Successfully wrote: ${url} to NFC tag!`, 'success');
                 } catch (error) {
                     console.error("NFC Write Error:", error);
-                    showMessage(`Error: ${error.message}`, 'error');
+                    // Provide user-friendly error messages
+                    if (error.name === 'NotAllowedError') {
+                        showMessage('Permission denied or no NFC tag found. Please ensure NFC is enabled and tap a tag quickly.', 'error');
+                    } else if (error.name === 'AbortError') {
+                        showMessage('NFC write cancelled or timed out. Try again.', 'error');
+                    } else {
+                        showMessage(`Error writing to NFC tag: ${error.message}`, 'error');
+                    }
                 } finally {
-                    // After a short delay, reset the message to the default state
+                    // After a short delay, reset the UI to the initial state
                     setTimeout(() => {
-                        showMessage('Ready. Select another URL to write.', 'info');
-                    }, 3000);
+                        resetUI();
+                    }, 3000); // Reset after 3 seconds
                 }
             }
 
             /**
-             * Displays a status message to the user.
-             * @param {string} message - The message text.
-             * @param {'info'|'success'|'error'|'writing'} type - The type of message for styling.
+             * Resets the UI to its initial state, clearing selections and disabling the write button.
+             */
+            function resetUI() {
+                showMessage('Ready. Select another URL to write to an NFC tag.', 'info');
+                selectedUrl = null; // Clear the selected URL
+                // Remove 'selected' class and ring colors from all URL buttons
+                urlButtons.forEach(btn => btn.classList.remove('selected', 'ring-blue-500', 'ring-green-500', 'ring-purple-500'));
+                writeButton.disabled = true; // Disable the write button
+                writeButton.textContent = 'Select a URL to activate'; // Reset button text
+                writeButton.className = 'btn bg-gray-400 text-white'; // Reset button styling
+            }
+
+            /**
+             * Displays a status message to the user with appropriate styling.
+             * @param {string} message - The message text to display.
+             * @param {'info'|'success'|'error'|'writing'} type - The type of message for styling (e.g., 'success' for green).
              */
             function showMessage(message, type) {
                 statusMessage.textContent = message;
-                statusMessage.className = 'mt-6 p-4 text-center rounded-lg text-sm font-medium'; // Reset classes
-                statusMessage.classList.remove('hidden');
+                // Reset all previous styling classes
+                statusMessage.className = 'mt-6 p-4 text-center rounded-lg text-sm font-medium'; 
+                statusMessage.classList.remove('hidden'); // Ensure message box is visible
 
+                // Apply specific styling based on message type
                 switch (type) {
                     case 'success':
                         statusMessage.classList.add('bg-green-100', 'text-green-800');
@@ -126,7 +194,7 @@
                         statusMessage.classList.add('bg-red-100', 'text-red-800');
                         break;
                     case 'writing':
-                        statusMessage.classList.add('bg-yellow-100', 'text-yellow-800');
+                        statusMessage.classList.add('bg-yellow-100', 'text-yellow-800', 'animate-pulse'); // Added pulse for active state
                         break;
                     case 'info':
                     default:
