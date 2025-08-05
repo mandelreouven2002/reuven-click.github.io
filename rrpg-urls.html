@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>גלגול - כל הקישורים</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Assistant', sans-serif;
+            direction: rtl;
+        }
+        .btn-glow {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+        }
+        .btn-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px 0 rgba(255, 255, 255, 0.15);
+        }
+        .special-btn-glow:hover {
+             box-shadow: 0 6px 25px 0 rgba(251, 191, 36, 0.4);
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- The main container with the gradient background -->
+    <div class="min-h-screen flex flex-col items-center justify-center p-4" style="background: linear-gradient(135deg, #ef4444, #f97316);">
+        <!-- Card opacity increased from 80 to 90 for better readability -->
+        <div class="w-full max-w-md mx-auto bg-gray-900 bg-opacity-90 backdrop-blur-sm rounded-2xl p-8 text-center shadow-2xl">
+            
+            <!-- Logo or main image -->
+            <img src="https://placehold.co/100x100/1a202c/ffffff?text=לוגו" alt="לוגו גלגול" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-gray-600">
+            
+            <!-- Title and description -->
+            <h1 class="text-3xl font-bold mb-2 text-white">גלגול - משחקי תפקידים למען הקהילה</h1>
+            <p class="text-gray-300 mb-8">בית פתוח לכל מי שאוהב לדמיין, לשחק, להנחות, ולחלוק את התחביב עם אחרים.</p>
+
+            <!-- Links list with updated button colors for better contrast -->
+            <div class="space-y-4">
+                <!-- Changed button color from gray-800 to gray-700 -->
+                <a href="https://rrpg.top" target="_blank" rel="noopener noreferrer" class="btn-glow block w-full bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg text-lg">
+                    🎲 האתר הראשי - גלגול
+                </a>
+                <a href="https://follow.rrpg.top" target="_blank" rel="noopener noreferrer" class="btn-glow block w-full bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg text-lg">
+                    📬 הרשמה לעדכונים
+                </a>
+                <a href="https://blog.rrpg.top" target="_blank" rel="noopener noreferrer" class="btn-glow block w-full bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg text-lg">
+                    📜 בלוג "קוביה טובה"
+                </a>
+                <a href="https://gate.rrpg.top" target="_blank" rel="noopener noreferrer" class="btn-glow block w-full bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg text-lg">
+                    🚪 שער הכניסה למתחילים
+                </a>
+                <a href="http://donate.rrpg.top/" target="_blank" rel="noopener noreferrer" class="btn-glow special-btn-glow block w-full bg-amber-500 hover:bg-amber-400 text-gray-900 font-bold py-3 px-4 rounded-lg text-lg">
+                    ❤️ תמכו בפרויקטים ותרמו!
+                </a>
+            </div>
+            
+            <!-- Footer -->
+            <p class="text-gray-500 text-sm mt-8">
+                © כל הזכויות שמורות - ראובן צירל מנדלוביץ'.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
