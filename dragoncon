@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>דרקוניקון 2026 – הרשמה וקהילה</title>
+
+    <!-- Bootstrap RTL -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+            integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb"
+            crossorigin="anonymous"
+    />
+
+    <!-- Font (optional) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --bg1: #fff7e6;
+            --bg2: #eef8ff;
+            --card: #ffffff;
+            --text: #101828;
+            --muted: #475467;
+            --stroke: rgba(16,24,40,0.10);
+            --accent: #ffa500;
+        }
+
+        body{
+            font-family: "Heebo", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+            color: var(--text);
+            min-height: 100vh;
+            margin: 0;
+            background:
+                    radial-gradient(1200px 700px at 80% -10%, rgba(255,165,0,0.25), transparent 55%),
+                    radial-gradient(900px 600px at 10% 10%, rgba(81,206,255,0.22), transparent 55%),
+                    linear-gradient(180deg, var(--bg2), var(--bg1));
+        }
+
+        /* מרכז מסך מוחלט */
+        .center-stage{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+        }
+
+        /* רוחב רספונסיבי: בנייד קומפקטי, במחשב רחב יותר */
+        .stack{
+            width: min(720px, 100%);
+        }
+        @media (max-width: 576px){
+            .stack{ width: min(420px, 100%); }
+        }
+
+        /* כותרת עליונה */
+        .page-title{
+            text-align: center;
+            font-weight: 900;
+            letter-spacing: .2px;
+            margin-bottom: 14px;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: var(--text);
+        }
+        .page-subtitle{
+            text-align: center;
+            margin-top: -6px;
+            margin-bottom: 14px;
+            color: rgba(16,24,40,0.62);
+            font-weight: 600;
+            font-size: 0.98rem;
+        }
+
+        .card{
+            border: 1px solid var(--stroke);
+            background: var(--card);
+            box-shadow: 0 14px 40px rgba(16,24,40,0.10);
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .card + .card{ margin-top: 14px; }
+
+        .card-header{
+            border-bottom: 1px solid var(--stroke);
+            background: linear-gradient(90deg, rgba(255,165,0,0.22), rgba(81,206,255,0.12));
+            padding: 14px 16px;
+        }
+
+        .card-body{
+            padding: 14px 16px 16px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .reg{
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .hint{
+            font-size: 0.92rem;
+            color: #667085;
+            margin-bottom: 10px;
+        }
+
+        .form-control{
+            border-radius: 12px;
+            border: 1px solid rgba(16,24,40,0.14);
+            background: #fff;
+            color: var(--text);
+        }
+        .form-control::placeholder{ color: rgba(16,24,40,0.45); }
+        .form-control:focus{
+            border-color: rgba(255,165,0,0.65);
+            box-shadow: 0 0 0 .25rem rgba(255,165,0,0.18);
+        }
+
+        .btn-accent{
+            border-radius: 12px;
+            border: 1px solid rgba(255,165,0,0.65);
+            background: linear-gradient(180deg, #ffbe3b, #ffa500);
+            color: #1b1200;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .btn-ghost{
+            border-radius: 12px;
+            border: 1px solid rgba(16,24,40,0.14);
+            background: #fff;
+            color: var(--text);
+            font-weight: 700;
+        }
+        .btn-ghost:hover{
+            background: rgba(255,165,0,0.08);
+            border-color: rgba(255,165,0,0.40);
+        }
+
+        a{ color: #a46a00; }
+        a:hover{ color: #000; }
+    </style>
+</head>
+
+<body>
+<main class="center-stage">
+    <section class="stack">
+
+        <h1 class="page-title">דרקוניקון 2026</h1>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="reg">הצטרפו לרשימת הדיוור של דרקוניקון</h2>
+            </div>
+            <div class="card-body">
+                <div class="hint">קבלו את העדכונים הכי חשובים על הכנס למייל.</div>
+
+                <div id="mc_embed_signup">
+                    <form
+                            action="https://dragoncon.us14.list-manage.com/subscribe/post?u=e593e640849912e298811c7e9&amp;id=d319774da3"
+                            method="post"
+                            id="mc-embedded-subscribe-form"
+                            name="mc-embedded-subscribe-form"
+                            class="validate"
+                            target="_blank"
+                            novalidate
+                            accept-charset="UTF-8"
+                    >
+                        <div id="mc_embed_signup_scroll">
+                            <div class="input-group">
+                                <input
+                                        type="email"
+                                        value=""
+                                        name="EMAIL"
+                                        class="email form-control"
+                                        id="mce-EMAIL"
+                                        placeholder="דואר אלקטרוני"
+                                        autocomplete="email"
+                                        inputmode="email"
+                                        required
+                                >
+                                <button class="btn btn-accent" type="submit" name="subscribe">
+                                    הרשמה
+                                </button>
+                            </div>
+
+                            <!-- anti-bot -->
+                            <div style="position:absolute; left:-5000px;" aria-hidden="true">
+                                <input type="text" name="b_e593e640849912e298811c7e9_d319774da3" tabindex="-1" value="">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="reg">אנחנו נמצאים גם ברשתות החברתיות!</h2>
+            </div>
+            <div class="card-body">
+                <div class="hint">עקבו אחרינו ברשתות החברתיות.</div>
+
+                <div class="d-grid gap-2">
+                    <a class="btn btn-ghost" href="https://www.facebook.com/DragonconIL" target="_blank" rel="noopener">
+                        פייסבוק – DragonconIL
+                    </a>
+                    <a class="btn btn-ghost" href="https://www.instagram.com/dragoncon.il/" target="_blank" rel="noopener">
+                        אינסטגרם – dragoncon.il
+                    </a>
+                    <a class="btn btn-ghost" href="https://chat.whatsapp.com/Hj40UIF3MnB5hB3VBagsI8" target="_blank" rel="noopener">
+                        קבוצת וואטסאפ
+                    </a>
+                </div>
+
+                <hr style="border-color: rgba(16,24,40,0.10); margin: 14px 0;">
+
+                <p class="mb-0">
+                    אתר <a href="https://www.pundak.co.il" target="_blank" rel="noopener">הפונדק</a>
+                </p>
+            </div>
+        </div>
+
+    </section>
+</main>
+</body>
+</html>
