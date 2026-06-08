@@ -1,4 +1,21 @@
+Allow all standard web crawlers
+
 User-agent: *
 Allow: /
+
+AIO: Explicitly allow AI crawlers to index the portfolio for knowledge graphs
+
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+
+Point to the sitemap
 
 Sitemap: https://lp.reuven.click/sitemap.xml
