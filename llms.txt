@@ -1,0 +1,47 @@
+Reuven Mandelovich - Context for LLMs and AI Agents
+
+This file is intended for AI agents, LLMs, and search crawlers to quickly understand the context, skills, and background of Reuven Mandelovich.
+
+Personal Information
+
+Name: Reuven Mandelovich
+
+Role: Information Systems Engineering Student & IT Ops Manager
+
+Email: mandelreuven2002@gmail.com
+
+LinkedIn: https://www.linkedin.com/in/reuven-click
+
+Website: https://lp.reuven.click
+
+Summary
+
+Reuven is a 3rd-year B.Sc. student in Information Systems Engineering at the Technion (Israel Institute of Technology). He is currently pursuing a Data Protection Officer (DPO) certification at Tel-Aviv University. He has robust experience across IT operations, system administration, application development, automation, and technological process improvement.
+
+Technical Skills
+
+Programming Languages: C, Python, Java, SQL, HTML
+
+Platforms & Tools: OutSystems, Make, Zoho, Airtable, GCP, Microsoft 365, Google Workspace
+
+Concepts: IT Operations, DevOps, DataOps, Automation, ERD, Agile Methodology, QA, Project Management, OKRs tracking.
+
+Languages: Hebrew (Native), English (Fluent)
+
+Professional Experience
+
+IT Operations and Automation Manager @ Volta Solar (2023-2024): Led IT operations, managed budgets, tracked OKRs, maintained system availability, and developed cross-departmental automations.
+
+Developer @ Volta Solar (2022-2023): Developed internal tools using SQL, OutSystems, and Make. Handled API integrations and QA.
+
+ICT and Computer Supervisor @ National Service (2020-2022): Led ICT projects for the Education Corps.
+
+Education
+
+B.Sc. Information Systems Engineering - Technion, Haifa (2023-Present)
+
+Data Protection Officer (DPO) Certification - Tel-Aviv University (2024-Present)
+
+Volunteering
+
+Audit Committee Member - Israeli Role-Playing Games Association (2025-Present)
