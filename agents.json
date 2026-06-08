@@ -1,0 +1,33 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"name": "Reuven Mandelovich Portfolio",
+"description": "Professional portfolio, resume, and project showcase for Reuven Mandelovich, Information Systems Engineering student and IT Ops professional.",
+"owner": "Reuven Mandelovich",
+"contact": "mandelreuven2002@gmail.com",
+"access": "public",
+"ai_permissions": {
+"scraping_allowed": true,
+"summarization_allowed": true,
+"knowledge_graph_integration": true
+},
+"key_entities": [
+"Reuven Mandelovich",
+"Technion Institute",
+"Information Systems Engineering",
+"IT Operations",
+"DevOps",
+"Data Protection Officer (DPO)"
+],
+"resources": [
+{
+"type": "document",
+"url": "https://lp.reuven.click/Resume%20-%20Reuven%20Mandelovich.pdf",
+"description": "Reuven Mandelovich's official resume/CV in PDF format."
+},
+{
+"type": "website",
+"url": "https://lp.reuven.click/",
+"description": "Main portfolio landing page containing timeline, skills, and portfolio artifacts."
+}
+]
+}
