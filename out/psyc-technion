@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>שאלון מחקר - קורס מבוא לפסיכולוגיה בטכניון</title>
+    <meta name="description" content="השתתפו בשאלון מחקר קצר במסגרת קורס מבוא לפסיכולוגיה בטכניון. תרומתכם למחקר חשובה לנו מאוד." />
+    <meta name="keywords" content="טכניון, פסיכולוגיה, מבוא לפסיכולוגיה, שאלון מחקר, סקר, מחקר אקדמי" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://greatresults.co.il/wp-content/uploads/2019/05/%D7%98%D7%9B%D7%A0%D7%99%D7%95%D7%9F-%D7%9C%D7%95%D7%92%D7%95.jpg" /> <meta property="og:title" content="שאלון מחקר - קורס מבוא לפסיכולוגיה בטכניון" />
+    <meta property="og:description" content="נשמח להשתתפותכם בשאלון מחקר קצר במסגרת קורס מבוא לפסיכולוגיה בטכניון. היכנסו עכשיו!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="YOUR_IMAGE_URL_HERE" /> <link rel="icon" href="YOUR_FAVICON_URL_HERE" type="image/x-icon" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="שאלון מחקר - קורס מבוא לפסיכולוגיה בטכניון" />
+    <meta name="twitter:description" content="נשמח להשתתפותכם בשאלון מחקר קצר במסגרת קורס מבוא לפסיכולוגיה בטכניון. היכנסו עכשיו!" />
+    <meta name="twitter:image" content="https://greatresults.co.il/wp-content/uploads/2019/05/%D7%98%D7%9B%D7%A0%D7%99%D7%95%D7%9F-%D7%9C%D7%95%D7%92%D7%95.jpg" />
+
+    <script>
+        const links = [
+            "https://forms.office.com/Pages/ResponsePage.aspx?id=TCxQ8S7uHEGXFchV9nU7hB1Z1g2Gi2lOrB8rOmCEt8tUMzcxN1NIVEhWMUJIME5WQVJTQ1IwWE4yVi4u&lang=he-IL",
+            "https://forms.office.com/Pages/ResponsePage.aspx?id=TCxQ8S7uHEGXFchV9nU7hB1Z1g2Gi2lOrB8rOmCEt8tUMDNMNkNJVkFVTUlYUzUwMUdQSUQ3OE9URy4u&lang=he-IL"
+        ];
+        const randomIndex = Math.random() < 0.5 ? 0 : 1;
+        window.location.replace(links[randomIndex]);
+    </script>
+</head>
+<body>
+</body>
+</html>
